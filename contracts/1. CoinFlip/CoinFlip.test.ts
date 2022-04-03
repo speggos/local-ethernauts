@@ -16,6 +16,10 @@ describe("Attacking CoinFlip", function () {
   // Get this to pass!
   it("Succesfully guessess the correct outcome 10 times in a row", async () => {
     await helper(victim, attacker);
+
+    for (let i=0; i<10; i++) {
+      await attacker.hackContract();
+    }
     const consecutiveWins = await victim.consecutiveWins();
     expect(consecutiveWins).to.be.equal(10);
   });
